@@ -13,20 +13,20 @@ Live Demo @ [https://hind-sagar-biswas.github.io/ticTacToe](https://hind-sagar-b
 ## Features
 
 1. Current Features
- 
-  1. General Tic Tac Toe Rules
- 
-  1. 2v2 Play
- 
-  1. Save Progress
- 
-  1. High Score
-
+  
+   1. General Tic Tac Toe Rules
+  
+   1. 2v2 Play
+  
+   1. Save Progress
+  
+   1. High Score
+  
 1. Upcoming Features
- 
-  1. Game Modes
- 
-  1. Play Against Computer
+  
+   1. Game Modes
+  
+   1. Play Against Computer
 
 ## Languages
 
