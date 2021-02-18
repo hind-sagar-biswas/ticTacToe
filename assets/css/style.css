@@ -1,0 +1,183 @@
+*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		
+}
+body{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		height: 100vh;
+		width: 100vw;
+		background: linear-gradient(-120deg, #0f2f5c, #307bc3);
+		font-family: 'Fira Sans', sans-serif;
+		font-family: 'Roboto', sans-serif;
+}
+.row{
+		display: flex;
+}
+.row div{
+		width: 100px;
+		height: 100px;
+		background: #0b152e;
+		border: 2px solid #22428d;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: #d1e4e4;
+}
+section{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-around;
+		background: #d1e4e4;
+		padding: 10px;
+		border-radius: 5px;
+}
+.box-container{
+		border: 2px solid #22428d;
+		border-radius: 5px;
+}
+.scores{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 300;
+}
+h3, p, h4{
+		text-align: center;
+}
+.player{
+		margin: 10px;
+}
+center h1{
+		color: #d1e4e4;
+		margin: 20px 0;
+		font-size: 3rem;
+}
+.playerOne{
+		margin: 5px 115px 5px 0;
+}
+.playerTwo{
+		margin: 5px 0 5px 15px;
+}
+.player h3{color: #22428d;}
+.player p{color: #307bc3;}
+.updates{
+		padding: 10px;
+}
+.setting{
+		opacity: 0.6;
+		transition: 0.5s;
+}
+
+.setting:hover{
+		transform: rotate(180deg);
+}
+
+/* The side navigation menu */
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.nav-link:hover{
+		background: linear-gradient(-210deg, #0f2f5c, #307bc3);
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 2; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 35% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 2px solid #307bc3;
+  width: 80%; /* Could be more or less, depending on screen size */
+  position: relative;
+}
+
+modal-inner-content{
+		margin: 20px auto;
+		border: 2px solid #22428d;
+		padding: 10px;
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  background: #06254f;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+}
+
+.close:hover,
+.close:focus {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  background: #041731;
+  border-radius: 50%;
+}
+.save-on{
+		border-left: 4px solid #6af5ff;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
