@@ -3,6 +3,8 @@ const xScore = document.getElementById('x');
 const oScore = document.getElementById('o');
 const xHScore = document.getElementById('xH');
 const oHScore = document.getElementById('oH');
+const messageBox = document.getElementById('popUpInfo');
+const theMessage = document.getElementById('theMessage');
 const update = document.getElementById('updates');
 const togProg = document.getElementById('saveProg');
 const modal = document.getElementById("highScore");
@@ -207,7 +209,7 @@ function checkWin() {
 		}
 		
 		if(winner != 'draw') {
-				alert(`Match Over!\n\nThe winner is ${winner}`);
+				winMessage('The Winner is', winner);
 				update.innerHTML = `\'${winner}\' won the last match!`;
 				if(winner == 'X') {
 						xPoints++
@@ -217,7 +219,7 @@ function checkWin() {
 						turn = false;
 				}
 		}else {
-				alert('Match Draw');
+			  winMessage('Oopsy! It\'s a', winner);
 				update.innerHTML = 'Last Match was A Draw!';
 		}
 		
@@ -231,11 +233,9 @@ function checkWin() {
 		
 		if(xPoints >= xHighScore) {
 				xHighScore = xPoints;
-				console.log(xHighScore);
 		}
 		if(oPoints >= oHighScore) {
-				oHighScore = oPoints;
-				console.log(oHighScore);
+				oHighScore = oPoints
 		}
 		
 		xHScore.innerHTML = xHighScore;
@@ -275,6 +275,23 @@ function openNav() {
 
 function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
+}
+
+function winMessage(m, winner) {
+		popUp.play();
+		messageBox.style.opacity = "1";
+		messageBox.style.pointerEvents = "all";
+		var message = `
+		<h3 id="messageHead">${m}....</h3>
+						<h1 class="message">${winner}</h1>
+		`;
+		theMessage.innerHTML = message;
+}
+
+function closeMessage() {
+		popUp.play();
+		messageBox.style.opacity = "0";
+		messageBox.style.pointerEvents = "none";
 }
 
 function saveTheProgress() {
