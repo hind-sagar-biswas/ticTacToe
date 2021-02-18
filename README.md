@@ -76,5 +76,5 @@ This project is licenced under MIT open source license.
 
 ## Screenshot
 
-![Screenshot 01]()
-![Screenshot 02]()
+![Screenshot 01](https://github.com/hind-sagar-biswas/ticTacToe/blob/main/assets/images/ttt_screenshot01.png)
+![Screenshot 02](https://github.com/hind-sagar-biswas/ticTacToe/blob/main/assets/images/ttt_screenshot02.png)
