@@ -1,9 +1,11 @@
 # ticTacToe
 
-[![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
-[![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](http://shields.io/)
-[![Ask Me Anything !](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://GitHub.com/Naereen/ama)
+![Project Language](https://img.shields.io/static/v1?label=language&message=javascript&color=yellow)
+![Project Type](https://img.shields.io/static/v1?label=type&message=game&color=blue)
+![Github License](https://img.shields.io/static/v1?label=license&message=MIT&color=green)
+![Maintained](https://img.shields.io/static/v1?label=maintained&message=yes&color=green)
+![Ask Me Anything](https://img.shields.io/static/v1?label=ask-me&message=anything&color=green)
+[![Website Up](https://img.shields.io/static/v1?label=website&message=up&color=orange)](https://hind-sagar-biswas.github.io/tictactoe)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
 
