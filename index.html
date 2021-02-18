@@ -3,13 +3,13 @@
 <head>
 		<!-- Required Meta Tags -->	
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viiewport" content="width=device-width, initial-scale=1">
 		<meta name="language" content="english"> 
 		<meta name="author" content="Hind Sagar Biswas"> 
 		<meta name="designer" content="Hind Sagar Biswas"> 
 		<meta name="publisher" content="Hind Sagar Biswas"> 
 		
-		<title>Tic Tac Toe - CR Game</title>
+		<title>Tic Tac Toe - 1.1</title>
 		
 		<link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Roboto&display=swap" rel="stylesheet">
@@ -17,6 +17,17 @@
 		<link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+		<section id="popUpInfo">
+				<h1 id="matchOver">Match Over</h1>
+				<div class="messageBox">
+					<div id="theMessage">
+						
+					</div>
+				</div>
+				<button id="continue" onclick="closeMessage()">
+						Continue
+				</button>
+		</section>
 		<div id="mySidenav" class="sidenav">
 				<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 				<a class="nav-link" onclick="restart('restart')" href="#">Restart</a>
