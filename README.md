@@ -6,7 +6,7 @@
 ![Latest Version](https://img.shields.io/static/v1?label=latest-version&message=v1.0&color=lightgrey)
 ![Maintained](https://img.shields.io/static/v1?label=maintained&message=yes&color=green)
 ![Ask Me Anything](https://img.shields.io/static/v1?label=ask-me&message=anything&color=green)
-[![Website Up](https://img.shields.io/static/v1?label=website&message=up&color=orange)](https://hind-sagar-biswas.github.io/tictactoe)
+[![Website Up](https://img.shields.io/static/v1?label=website&message=up&color=orange)](https://hind-sagar-biswas.github.io/ticTacToe)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
 
