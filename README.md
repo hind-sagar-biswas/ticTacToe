@@ -4,7 +4,7 @@ A Vanilla JavaScript Tic-Tac-Toe Game 🎮
 
 ***I/N:** There might be bugs in the code. If found, please inform.*
 
-***I/N:** Screenshot is given at the end of README.md.*
+***I/N:** Screenshot is given at the end of `README.md`.*
 
 ## Demo
 
@@ -72,7 +72,7 @@ None!
 
 ## License
 
-This project is licenced under MIT open source license.
+This project is licenced under `MIT` open source license.
 
 ## Screenshot
 
