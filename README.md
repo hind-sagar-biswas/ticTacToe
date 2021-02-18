@@ -3,6 +3,7 @@
 ![Project Language](https://img.shields.io/static/v1?label=language&message=javascript&color=yellow)
 ![Project Type](https://img.shields.io/static/v1?label=type&message=game&color=blue)
 ![Github License](https://img.shields.io/static/v1?label=license&message=MIT&color=green)
+![Latest Version](https://img.shields.io/static/v1?label=latest-version&message=v1.0&color=lightgrey)
 ![Maintained](https://img.shields.io/static/v1?label=maintained&message=yes&color=green)
 ![Ask Me Anything](https://img.shields.io/static/v1?label=ask-me&message=anything&color=green)
 [![Website Up](https://img.shields.io/static/v1?label=website&message=up&color=orange)](https://hind-sagar-biswas.github.io/tictactoe)
@@ -25,7 +26,7 @@ Live Demo @ [https://hind-sagar-biswas.github.io/ticTacToe](https://hind-sagar-b
   
    1. General Tic Tac Toe Rules
   
-   1. 2v2 Play
+   1. 1v1 Play
   
    1. Save Progress
   
