@@ -2,7 +2,6 @@
 		margin: 0;
 		padding: 0;
 		box-sizing: border-box;
-		
 }
 body{
 		display: flex;
@@ -175,6 +174,76 @@ modal-inner-content{
 }
 .save-on{
 		border-left: 4px solid #6af5ff;
+}
+
+#popUpInfo{
+		height: 100vh;
+		width: 100vw;
+		background: rgba(0,0,0,0.8);
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		pointer-events: none;
+		opacity: 0;
+		transition: all 0.4s;
+}
+#matchOver{
+		color: rgba(225,225,225,0.9);
+		font-size: 3.5rem;
+}
+.messageBox{
+		background: #dff3f3;
+		width: 270px;
+		height: 300px;
+		border-radius: 5px;
+		margin: 5px 0 10px 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+}
+.messageBox div{
+		border: 2px solid #307bc3;
+		border-radius: 5px;
+		height: 70%;
+		width: 70%;
+		padding: 10px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+}
+#continue{
+		background: linear-gradient(-120deg, #0f2f5c, #307bc3);
+		color: white;
+		font-weight: bold;
+		outline: none !important;
+		border: none;
+		text-align: center;
+		padding: 1em;
+		width: 270px;
+		border-radius: 20px;
+		animation: beat 1.5s linear infinite;
+}
+@keyframes beat{
+		0%{
+				transform: scale(1, 1);
+		}
+		25%{
+				transform: scale(1.05, 1.05);
+		}
+		50%{
+				transform: scale(1, 1);
+		}
+		75%{
+				transform: scale(0.93, 0.93);
+		}
+		100%{
+				transform: scale(1, 1);
+		}
 }
 
 @media screen and (max-height: 450px) {
