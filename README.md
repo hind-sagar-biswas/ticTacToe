@@ -58,29 +58,33 @@ None!
  
   * audio
   
-    * button-click.mp3
+    * `button-click.mp3`
   
-    * button-error.mp3
+    * `button-error.mp3`
   
-    * popup.mp3
+    * `popup.mp3`
  
   * css
   
-    * style.css
+    * `style.css`
  
   * images
   
-    * tictactoe.png
+    * `tictactoe.png`
   
-    * ttt_screenshot01.png
+    * `ttt_screenshot01.png`
   
-    * ttt_screenshot02.png
+    * `ttt_screenshot02.png`
  
   * js
   
-    * app.js
+    * `app.js`
 
-* index.html
+* `index.html`
+
+* `LICENSE`
+
+* `README.md`
 
 ## License
 
