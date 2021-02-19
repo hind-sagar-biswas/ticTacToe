@@ -22,6 +22,20 @@ Create Issue @ [https://github.com/hind-sagar-biswas/ticTacToe/issues](https://g
 
 Live Demo @ [https://hind-sagar-biswas.github.io/ticTacToe](https://hind-sagar-biswas.github.io/ticTacToe)
 
+## Clone
+
+**Github CLI**
+
+```
+gh repo clone hind-sagar-biswas/ticTacToe
+```
+
+**HTTPS**
+
+```
+https://github.com/hind-sagar-biswas/ticTacToe.git
+```
+
 ## Features
 
 1. Current Features
