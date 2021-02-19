@@ -14,6 +14,8 @@ A Vanilla JavaScript Tic-Tac-Toe Game 🎮
 
 ***I/N:** There might be bugs in the code. If found, please inform.*
 
+Create Issue @ [https://github.com/hind-sagar-biswas/ticTacToe/issues](https://github.com/hind-sagar-biswas/ticTacToe/issues)
+
 ***I/N:** Screenshot is given at the end of `README.md`.*
 
 ## Demo
