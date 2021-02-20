@@ -16,3 +16,20 @@ If you spot something new, open an issue using a template. We'll use the issue t
 
 Fork the repo so that you can make your changes without affecting the original project until you're ready to merge them.
 
+## Make Update
+
+Make your changes to the file(s) you'd like to 
+
+## Open a pull request
+
+When you're done making changes and you'd like to propose them for review, use the pull request template to open your PR (pull request).
+
+Once you made a PR, it'll be reviewed and then be merged.
+
+## PR merged
+
+As soon as all the conflicts are resolved, your PR would be merged.
+
+## Congrats ✨
+
+Congratulations 🎉, you are now a contributor to this Repository. Keep making changes and improve this repo.
