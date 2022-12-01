@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required Meta Tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="english">
+    <meta name="author" content="Hind Sagar Biswas">
+    <meta name="designer" content="Hind Sagar Biswas">
+    <meta name="publisher" content="Hind Sagar Biswas">
+
+    <title>Tic Tac Toe - 2.0</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Roboto&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/play.css">
+</head>
+
+<body>
+    <section id="popUpInfo">
+        <h1 id="matchOver">Match Over</h1>
+        <div class="messageBox">
+            <div id="theMessage">
+
+            </div>
+        </div>
+        <button id="continue" onclick="closeMessage()">
+            Continue
+        </button>
+    </section>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a class="nav-link" onclick="restart('restart')" href="#">Restart</a>
+        <a class="nav-link" onclick="reset()" href="#">Reset</a>
+        <a id="highScoreBtn" class="nav-link" href="#">High Score</a>
+        <a class="nav-link" href="#" onclick="toggleProgress()" id="saveProg">
+            Save Progress
+        </a>
+        <a class="nav-link" onclick="alert('modes are coming soon')" href="#">Mode</a>
+        <a class="nav-link" href="https://github.com/hind-sagar-biswas/ticTacToe">Source Code</a>
+        <a class="nav-link" href="https://hindbiswas.000webhostapp.com/">Developer</a>
+    </div>
+    <center>
+        <h1>Tic Tac Toe <i class="fa fa-cog setting" onclick="openNav()"></i></h1>
+    </center>
+    <section>
+        <div class="header">
+            <div class="scores">
+                <div class="player playerOne">
+                    <h3>Player X</h3>
+                    <p id="x">O</p>
+                </div>
+                <div class="player playerTwo">
+                    <h3>Player O</h3>
+                    <p id="o">O</p>
+                </div>
+            </div>
+            <div class="updates">
+                <h4 id="updates">First Match!</h4>
+            </div>
+        </div>
+        <div class="box-container">
+            <div class="row">
+                <div id="one" onclick="boxClick('one')"></div>
+                <div id="two" onclick="boxClick('two')"></div>
+                <div id="three" onclick="boxClick('three')"></div>
+            </div>
+            <div class="row">
+                <div id="four" onclick="boxClick('four')"></div>
+                <div id="five" onclick="boxClick('five')"></div>
+                <div id="six" onclick="boxClick('six')"></div>
+            </div>
+            <div class="row">
+                <div id="seven" onclick="boxClick('seven')"></div>
+                <div id="eight" onclick="boxClick('eight')"></div>
+                <div id="nine" onclick="boxClick('nine')"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Modal -->
+    <div id="highScore" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <br>
+            <div class="modal-inner-content">
+                <center>
+                    <h3 style="color:gold !important;">High Scores</h3>
+                    <hr>
+                </center>
+                <div class="scores">
+                    <div class="player playerOne">
+                        <h3>Player X</h3>
+                        <p id="xH">O</p>
+                    </div>
+                    <div class="player playerTwo">
+                        <h3>Player O</h3>
+                        <p id="oH">O</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.11.0/qs.min.js"
+        integrity="sha512-/l6vieC+YxaZywUhmqs++8uF9DeMvJE61ua5g+UK0TuHZ4TkTgB1Gm1n0NiA86uEOM9JJ6JUwyR0hboKO0fCng=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const btnClick = new Audio();
+        const btnError = new Audio();
+        const popUp = new Audio();
+
+        btnClick.src = 'assets/audio/button-click.mp3';
+        btnError.src = 'assets/audio/button-error.mp3';
+        popUp.src = 'assets/audio/popup.mp3';
+
+    </script>
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>

@@ -1,252 +1,106 @@
-*{
-		margin: 0;
-		padding: 0;
-		box-sizing: border-box;
-}
-body{
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		height: 100vh;
-		width: 100vw;
-		background: linear-gradient(-120deg, #0f2f5c, #307bc3);
-		font-family: 'Fira Sans', sans-serif;
-		font-family: 'Roboto', sans-serif;
-}
-.row{
-		display: flex;
-}
-.row div{
-		width: 100px;
-		height: 100px;
-		background: #0b152e;
-		border: 2px solid #22428d;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		color: #d1e4e4;
-}
-section{
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: space-around;
-		background: #d1e4e4;
-		padding: 10px;
-		border-radius: 5px;
-}
-.box-container{
-		border: 2px solid #22428d;
-		border-radius: 5px;
-}
-.scores{
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		width: 300;
-}
-h3, p, h4{
-		text-align: center;
-}
-.player{
-		margin: 10px;
-}
-center h1{
-		color: #d1e4e4;
-		margin: 20px 0;
-		font-size: 3rem;
-}
-.playerOne{
-		margin: 5px 115px 5px 0;
-}
-.playerTwo{
-		margin: 5px 0 5px 15px;
-}
-.player h3{color: #22428d;}
-.player p{color: #307bc3;}
-.updates{
-		padding: 10px;
-}
-.setting{
-		opacity: 0.6;
-		transition: 0.5s;
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+:root {
+	--dark-color-a: #0b152e;
+	--dark-color-b: #22428d;
+	--light-color: #d1e4e4;
+	--success-color: #5cb85c;
+	--error-color: #d9534f;
 }
 
-.setting:hover{
-		transform: rotate(180deg);
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
-/* The side navigation menu */
-.sidenav {
-  height: 100%; /* 100% Full-height */
-  width: 0; /* 0 width - change this with JavaScript */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
-  left: 0;
-  background-color: #111; /* Black*/
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 60px; /* Place content 60px from the top */
-  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+body {
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	background: var(--light-color);
+    background: linear-gradient(-120deg, var(--dark-color-a), var(--dark-color-b));
+    min-height: 100vh;
+    max-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* The navigation menu links */
-.sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
+ul {
+	list-style: none;
 }
 
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
-  color: #f1f1f1;
+a {
+	text-decoration: none;
 }
 
-.nav-link:hover{
-		background: linear-gradient(-210deg, #0f2f5c, #307bc3);
+.btn {
+	cursor: pointer;
+	padding: 5px 15px;
+	background: var(--light-color);
+	color: var(--dark-color-a);
+	border: 0;
+	font-size: 17px;
 }
 
-/* Position and style the close button (top right corner) */
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
+/* Join Page */
+.join-container {
+	max-width: 500px;
+	color: #fff;
+    box-shadow: 0 4px 16px 0 rgba(139, 171, 245, 0.3);
 }
 
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 2; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+.join-header {
+	text-align: center;
+	padding: 20px;
+	background: var(--dark-color-a);
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
 }
 
-/* Modal Content/Box */
-.modal-content {
-  background-color: #fefefe;
-  margin: 35% auto; /* 15% from the top and centered */
-  padding: 20px;
-  border: 2px solid #307bc3;
-  width: 80%; /* Could be more or less, depending on screen size */
-  position: relative;
+.join-main {
+	padding: 30px 40px;
+	background: var(--dark-color-b);
 }
 
-modal-inner-content{
-		margin: 20px auto;
-		border: 2px solid #22428d;
-		padding: 10px;
+.join-main p {
+	margin-bottom: 20px;
 }
 
-/* The Close Button */
-.close {
-  color: #aaa;
-  font-size: 28px;
-  font-weight: bold;
-  position: absolute;
-  top: 5px;
-  right: 10px;
-  background: #06254f;
-  border-radius: 50%;
-  width: 35px;
-  height: 35px;
-  text-align: center;
+.join-main .form-control {
+	margin-bottom: 20px;
 }
 
-.close:hover,
-.close:focus {
-  color: white;
-  text-decoration: none;
-  cursor: pointer;
-  background: #041731;
-  border-radius: 50%;
-}
-.save-on{
-		border-left: 4px solid #6af5ff;
+.join-main label {
+	display: block;
+	margin-bottom: 5px;
 }
 
-#popUpInfo{
-		height: 100vh;
-		width: 100vw;
-		background: rgba(0,0,0,0.8);
-		position: absolute;
-		top: 0;
-		left: 0;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		pointer-events: none;
-		opacity: 0;
-		transition: all 0.4s;
-}
-#matchOver{
-		color: rgba(225,225,225,0.9);
-		font-size: 3.5rem;
-}
-.messageBox{
-		background: #dff3f3;
-		width: 270px;
-		height: 300px;
-		border-radius: 5px;
-		margin: 5px 0 10px 0;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-}
-.messageBox div{
-		border: 2px solid #307bc3;
-		border-radius: 5px;
-		height: 70%;
-		width: 70%;
-		padding: 10px;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-}
-#continue{
-		background: linear-gradient(-120deg, #0f2f5c, #307bc3);
-		color: white;
-		font-weight: bold;
-		outline: none !important;
-		border: none;
-		text-align: center;
-		padding: 1em;
-		width: 270px;
-		border-radius: 20px;
-		animation: beat 1.5s linear infinite;
-}
-@keyframes beat{
-		0%{
-				transform: scale(1, 1);
-		}
-		25%{
-				transform: scale(1.05, 1.05);
-		}
-		50%{
-				transform: scale(1, 1);
-		}
-		75%{
-				transform: scale(0.93, 0.93);
-		}
-		100%{
-				transform: scale(1, 1);
-		}
+.join-main input[type='number'], .join-main input[type='text'] {
+	font-size: 16px;
+	padding: 5px;
+	height: 40px;
+	width: 100%;
 }
 
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+.join-main select {
+	font-size: 16px;
+	padding: 5px;
+	height: 40px;
+	width: 100%;
+}
+
+.join-main .btn {
+	margin-top: 20px;
+	width: 100%;
+}
+
+@media (max-width: 700px) {
+	.chat-main {
+		display: block;
+	}
+
+	.chat-sidebar {
+		display: none;
+	}
 }

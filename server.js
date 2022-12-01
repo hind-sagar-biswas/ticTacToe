@@ -5,6 +5,8 @@ const http = require("http");
 const express = require("express");
 const socketio = require("socket.io");
 
+const games = require("./utils/games");
+
 const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
@@ -20,6 +22,6 @@ io.on("connection", (socket) => {
 
 const port = 3000;
 
-server.listen(port, () =>
-	console.log(`Game server listening on http://localhost:${port}/`)
-);
+server.listen(port, () => {
+	console.log(`Game server listening on http://localhost:${port}/`);
+});
