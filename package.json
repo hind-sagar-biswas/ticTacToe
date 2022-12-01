@@ -1,0 +1,33 @@
+{
+  "name": "tictactoe",
+  "version": "2.0.0",
+  "description": "2 player Tic Tac Toe",
+  "main": "server.js",
+ "scripts": {
+    "start": "node server",
+    "dev": "nodemon server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hind-sagar-biswas/ticTacToe.git"
+  },
+  "keywords": [
+    "game",
+    "nodejs",
+    "multiplayer"
+  ],
+  "author": "Hind Sagar Biswas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hind-sagar-biswas/ticTacToe/issues"
+  },
+  "homepage": "https://github.com/hind-sagar-biswas/ticTacToe#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "moment": "^2.29.4",
+    "socket.io": "^4.5.4"
+  }
+}
