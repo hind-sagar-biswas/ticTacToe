@@ -37,4 +37,6 @@ const destroyGame = (gameId) => {
 
 module.exports = {
     createGame,
+    joinGame,
+    destroyGame,
 };

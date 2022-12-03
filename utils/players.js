@@ -1,7 +1,7 @@
 const players = [];
 
 // Add new player
-const addPlayer = (username, id) => {
+const addPlayer = (id, username) => {
 	const player = { id, username };
 	players.push(player);
 	return player;
