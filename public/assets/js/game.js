@@ -25,8 +25,6 @@ var oPoints = 0;
 var xHighScore = 0;
 var oHighScore = 0;
 
-var saveProgress = false;
-
 //ARRAYS
 
 //CONSTRUCTORS
@@ -37,6 +35,7 @@ let boxSpace = {};
 // --------------------------------------------------------------------------------------------------------------------------------------
 //                                                               SOCKET WORKS
 
+let restrictedMode = true;
 let playerInfo = window.localStorage.getItem("playerInfo");
 
 if (playerInfo == undefined || playerInfo == null || playerInfo == "") {
@@ -54,89 +53,19 @@ socket.on("gameUpdate", (gameObj) => {
 	window.localStorage.setItem("currentGame", gameObj.id);
 	console.log(gameObj);
 	boxSpace = gameObj.board;
+
+	document.getElementById(`${gameObj.starter}-player`).innerHTML = gameObj.host.username;
+	if (gameObj.opponent.id != null) {
+		if(gameObj.starter == 'x') document.getElementById(`o-player`).innerHTML = gameObj.opponent.username;
+		else document.getElementById(`x-player`).innerHTML = gameObj.opponent.username;
+		restrictedMode = !restrictedMode;
+	} 
+	else document.getElementById(`o-player`).innerHTML = "not joined yet";
 });
 
 // --------------------------------------------------------------------------------------------------------------------------------------
 
 //FUNCTIONS
-function toggleProgress() {
-	if (!saveProgress) {
-		if (confirm("Progress will be saved from now. Press 'ok' to ensure.")) {
-			saveProgress = true;
-			togProg.classList.add("save-on");
-			localStorage.setItem("saveProgress", "yes");
-		} else {
-			alert("You cancelled the progress save!");
-		}
-	} else {
-		if (
-			confirm(
-				"Progress will be not saved from now and the past progress would be lost. Press 'ok' to ensure."
-			)
-		) {
-			saveProgress = false;
-			togProg.classList.remove("save-on");
-			restart("disable progress saving on");
-			xHScore.innerHTML = 0;
-			oHScore.innerHTML = 0;
-			for (var num in boxSpace) {
-				localStorage.setItem(
-					num,
-					boxSpace[num]["by"] + "_!_" + boxSpace[num]["occupied"]
-				);
-			}
-			localStorage.setItem("xHS", 0);
-			localStorage.setItem("oHS", 0);
-			localStorage.setItem("xS", 0);
-			localStorage.setItem("oS", 0);
-			localStorage.setItem("turn", turn);
-			localStorage.setItem("saveProgress", "no");
-			update.innerHTML = "Save Progress Disabled.";
-		} else {
-			alert("you cancelled the action!");
-		}
-	}
-}
-
-function loadMemory() {
-	for (var num in boxSpace) {
-		var arrNum = localStorage.getItem(num).split("_!_");
-		boxSpace[num]["by"] = arrNum[0];
-		if (arrNum[0] != "none") {
-			document.getElementById(num).innerHTML = `<h1>${arrNum[0]}</h1>`;
-		}
-		if (arrNum[1] == "false" || !arrNum[1]) {
-			boxSpace[num]["occupied"] = false;
-		} else {
-			boxSpace[num]["occupied"] = true;
-		}
-	}
-
-	if (localStorage.getItem("turn") == "true" || localStorage.getItem("turn")) {
-		turn = true;
-	} else {
-		turn = false;
-	}
-
-	var xPoints = localStorage.getItem("xS");
-	var oPoints = localStorage.getItem("oS");
-
-	var xHighScore = localStorage.getItem("xSH");
-	var oHighScore = localStorage.getItem("oSH");
-
-	if (localStorage.getItem("saveProgress") == "yes") {
-		saveProgress = true;
-	} else {
-		saveProgress = false;
-	}
-
-	xScore.innerHTML = xPoints;
-	oScore.innerHTML = oPoints;
-
-	xHScore.innerHTML = xHighScore;
-	oHScore.innerHTML = oHighScore;
-}
-
 function boxClick(number) {
 	getBox = document.getElementById(number);
 	var symbol;
@@ -159,9 +88,6 @@ function boxClick(number) {
 	getBox.innerHTML = `<h1>${symbol}</h1>`;
 
 	checkWin();
-	if (saveProgress) {
-		saveTheProgress();
-	}
 }
 
 function checkWin() {
@@ -259,23 +185,6 @@ function restart(ask) {
 	}
 }
 
-function reset() {
-	restart("reset everything on");
-	xHScore.innerHTML = 0;
-	oHScore.innerHTML = 0;
-	for (var num in boxSpace) {
-		localStorage.setItem(
-			num,
-			boxSpace[num]["by"] + "_!_" + boxSpace[num]["occupied"]
-		);
-	}
-	localStorage.setItem("xHS", 0);
-	localStorage.setItem("oHS", 0);
-	localStorage.setItem("xS", 0);
-	localStorage.setItem("oS", 0);
-	localStorage.setItem("turn", "true");
-}
-
 function openNav() {
 	document.getElementById("mySidenav").style.width = "250px";
 }
@@ -301,22 +210,6 @@ function closeMessage() {
 	messageBox.style.pointerEvents = "none";
 }
 
-function saveTheProgress() {
-	for (var num in boxSpace) {
-		localStorage.setItem(
-			num,
-			boxSpace[num]["by"] + "_!_" + boxSpace[num]["occupied"]
-		);
-	}
-	localStorage.setItem("xHS", xHighScore);
-	localStorage.setItem("oHS", oHighScore);
-	localStorage.setItem("xS", xPoints);
-	localStorage.setItem("oS", oPoints);
-	localStorage.setItem("turn", turn);
-	localStorage.setItem("stored", "yes");
-	localStorage.setItem("saveProgress", "yes");
-}
-
 // When the user clicks on the button, open the modal
 btn.onclick = function () {
 	popUp.play();
@@ -337,14 +230,3 @@ window.onclick = function (event) {
 	}
 };
 
-//INVOKES
-
-if (
-	localStorage.getItem("stored") != null &&
-	localStorage.getItem("stored") == "yes" &&
-	localStorage.getItem("saveProgress") != "no"
-) {
-	loadMemory();
-	saveProgress = true;
-	togProg.classList.add("save-on");
-}

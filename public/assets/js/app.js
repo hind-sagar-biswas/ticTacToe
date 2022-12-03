@@ -3,6 +3,8 @@ const DEBUG = true;
 const socket = io();
 const startgameForm = document.getElementById("startgame-form");
 
+let username, starter, point
+
 let playerInfo = window.localStorage.getItem("playerInfo");
 if (playerInfo != undefined || playerInfo != null || playerInfo != "")
 	playerInfo = JSON.parse(playerInfo);
@@ -12,7 +14,7 @@ socket.on("playerInfo", (player) => {
 	window.localStorage.setItem("playerInfo", JSON.stringify(player));
 	playerInfo = JSON.parse(window.localStorage.getItem("playerInfo"));
 
-	socket.emit("startGame", player.id);
+	socket.emit("startGame", player.id, point, starter);
 });
 
 socket.on("gameUpdate", (gameObj) => {
