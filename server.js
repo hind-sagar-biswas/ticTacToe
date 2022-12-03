@@ -38,6 +38,12 @@ io.on("connection", (socket) => {
 		const game = games.joinGame(gameId, playerId);
 		socket.emit("gameUpdate", game);
 	});
+
+	socket.on('loadGame', (gameId) => {
+		const game = games.getGame(gameId);
+		// if (DEBUG) console.log(game);
+		socket.emit("gameUpdate", game); 
+	});
 });
 
 const port = 3000;

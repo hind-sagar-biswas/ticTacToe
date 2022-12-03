@@ -32,44 +32,7 @@ var saveProgress = false;
 //CONSTRUCTORS
 
 //OBJECTS
-var boxSpace = {
-	one: {
-		occupied: false,
-		by: "none",
-	},
-	two: {
-		occupied: false,
-		by: "none",
-	},
-	three: {
-		occupied: false,
-		by: "none",
-	},
-	four: {
-		occupied: false,
-		by: "none",
-	},
-	five: {
-		occupied: false,
-		by: "none",
-	},
-	six: {
-		occupied: false,
-		by: "none",
-	},
-	seven: {
-		occupied: false,
-		by: "none",
-	},
-	eight: {
-		occupied: false,
-		by: "none",
-	},
-	nine: {
-		occupied: false,
-		by: "none",
-	},
-};
+let boxSpace = {};
 
 // --------------------------------------------------------------------------------------------------------------------------------------
 //                                                               SOCKET WORKS
@@ -80,15 +43,17 @@ if (playerInfo == undefined || playerInfo == null || playerInfo == "") {
 	window.location.replace("/");
 } else {
 	playerInfo = JSON.parse(playerInfo);
-	const { gameId } = Qs.parse(location.search, {
+	const { gid } = Qs.parse(location.search, {
 		ignoreQueryPrefix: true,
 	});
-	if (DEBUG) console.log(gameId);
+	if (DEBUG) console.log(gid);
+	socket.emit("loadGame", gid);
 }
 
-socket.on()("gameUpdate", (gameObj) => {
+socket.on("gameUpdate", (gameObj) => {
 	window.localStorage.setItem("currentGame", gameObj.id);
-	
+	console.log(gameObj);
+	boxSpace = gameObj.board;
 });
 
 // --------------------------------------------------------------------------------------------------------------------------------------

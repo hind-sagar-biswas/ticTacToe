@@ -29,14 +29,22 @@ const joinGame = (gameId, playerId) => {
     return games[gameIndex];
 };
 
+// Get game
+const getGame = (gameId) => {
+    const index = games.findIndex((game) => { return game.id == gameId; });
+    const game = games[index];
+	return game;
+};
+
 // Destroy game
 const destroyGame = (gameId) => {
-    const index = games.findIndex((game) => game.id === gameid);
+    const index = games.findIndex((game) => game.id === gameId);
 	if (index !== -1) return games.splice(index, 1)[0];
-}
+};
 
 module.exports = {
     createGame,
     joinGame,
+    getGame,
     destroyGame,
 };
